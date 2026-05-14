@@ -6,7 +6,7 @@ export default function CreatePost(){
 
     const handleSubmit = async (e)=>{
         e.preventDefault();
-        await fetch("http://localhost:5000/api/posts",{
+        await fetch("https://blog-app-backed.onrender.com/api/posts",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",

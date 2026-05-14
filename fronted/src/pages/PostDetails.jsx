@@ -6,7 +6,7 @@ export default function  PostDetails(){
     const [post,setPost]=useState(null);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/api/posts/${id}`)
+        fetch(`https://blog-app-backed.onrender.com/api/posts/${id}`)
         .then((res)=>res.json())
         .then((data)=>setPost(data))
     },[id]);

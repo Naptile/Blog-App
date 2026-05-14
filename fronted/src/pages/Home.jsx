@@ -4,13 +4,13 @@ export default function Home(){
 const [posts,setPosts]= useState([]);
 
 useEffect(()=>{
-    fetch("http://localhost:5000/api/posts")
+    fetch("https://blog-app-backed.onrender.com/api/posts")
     .then((res)=>res.json())
     .then((data)=>setPosts(data))
 },[]);
 
 const handleDelete = async (id)=>{
-    await fetch(`http://localhost:5000/api/posts/${id}`,{
+    await fetch(`https://blog-app-backed.onrender.com/api/posts/${id}`,{
         method:"DELETE",
     });
 
@@ -21,7 +21,7 @@ const handleDelete = async (id)=>{
 const [keyWord, setKeyWord] = useState("");
 
 const handleSearch = async()=>{
-    const res = await fetch(`http://localhost:5000/api/posts?keyWord=${keyWord}`);
+    const res = await fetch(`https://blog-app-backed.onrender.com/api/posts?keyWord=${keyWord}`);
     const data = await res.json();
     setPosts(data);
     
